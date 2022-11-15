@@ -15,7 +15,7 @@
                 <tr class="bg-gray-50 border-b">
                    
                     <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
-                        <div class="flex items-center justify-center">
+                        <div class="flex items-center justify-center" >
                             Name
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
@@ -71,7 +71,7 @@
                         <td><?php echo $d['alamat']; ?></td>
                         <td><?php echo $d['email'];?></td>
                         <td>
-                        <a href="edit.php?id=<?php echo $d['no_Kontak'];?>">UPDATE | </a>
+                        <a href="edit.php?id=<?php echo $d['no_Kontak'];?>" >UPDATE | </a>
                         <a href="Hapus.php?id=<?php echo $d['no_Kontak'];?>">HAPUS</a>
                              
                         </td>

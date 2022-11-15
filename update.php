@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+
+<?php
+
+$no_Kontak = $_POST['no_Kontak'];
+$nama_Kontak = $_POST['nama_Kontak'];
+$alamat = $_POST['alamat'];
+$email = $_POST['email'];
+
+$id = $_GET ['di'];
+
+//query update data ke dalam database berdasarkan ID
+include 'koneksi.php';
+$query = "UPDATE kontak SET no_Kontak='$no_Kontak', nama_Kontak='$nama_Kontak', alamat='$alamat', email='$email' WHERE no_Kontak='$id'";
+
+//kondisi pengecekan apakah data berhasil diupdate atau tidak
+if($conn->query($query)) {
+    //redirect ke halaman index.php 
+
+    header("location:LihatData.php");
+} else {
+    //pesan error gagal update data
+    echo $query;
+  
+    echo "Data Gagal Diupate!";
+}
