@@ -8,18 +8,19 @@ $email = $_POST['email'];
 
 $id = $_GET ['di'];
 
-//query update data ke dalam database berdasarkan ID
 include 'koneksi.php';
 $query = "UPDATE kontak SET no_Kontak='$no_Kontak', nama_Kontak='$nama_Kontak', alamat='$alamat', email='$email' WHERE no_Kontak='$id'";
+mysqli_query ($conn,$query);
 
-//kondisi pengecekan apakah data berhasil diupdate atau tidak
-if($conn->query($query)) {
-    //redirect ke halaman index.php 
-
-    header("location:LihatData.php");
+if(mysqli_affected_rows($conn) > 0) {
+    echo     
+        "<script>
+            alert('data berhasil di update!');
+            document.location.href='LihatData.php'
+        </script>";
 } else {
-    //pesan error gagal update data
-    echo $query;
-  
-    echo "Data Gagal Diupate!";
+    echo 
+        "<script>
+            alert('data gagal di tambahkan!');
+        </script>";
 }

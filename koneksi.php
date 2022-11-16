@@ -1,5 +1,5 @@
 <?php 
-    $conn = mysqli_connect("localhost","root","","namakalian");
+    $conn = mysqli_connect("localhost","root","","firman");
     if (!$conn) {
         die("Koneksi Tidak Berhasil: " . mysqli_connect_error());
     }

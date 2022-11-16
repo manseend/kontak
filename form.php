@@ -8,7 +8,22 @@
 
         include "koneksi.php";
 
-        mysqli_query($conn,"insert into kontak values ('$no_Kontak','$nama_Kontak','$alamat','$email')");
+        $query = "insert into kontak values ('$no_Kontak','$nama_Kontak','$alamat','$email')";
+        mysqli_query($conn , $query);
 
-        header("location:LihatData.php");
+        
+        if(mysqli_affected_rows($conn) > 0) {
+            //redirect ke halaman index.php 
+            echo "<script>
+                    alert('data berhasil di tambahkan!');
+                    document.location.href='LihatData.php'
+                </script>";
+            
+        } else {
+            //pesan error gagal update data
+            echo "<script>
+            alert('data gagal di tambahkan!');
+        </script>";
+        }
+        
     ?>

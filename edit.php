@@ -30,7 +30,7 @@
             
             
                 <div class="w-3/4 mb-2">
-                    <input type="text" name="no_Kontak" class="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500 " value="<?php echo $row['no_Kontak']; ?>"  placeholder="No HP"></input>
+                    <input type="text" name="no_Kontak" class="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500 " value="<?php echo $row['no_Kontak']; ?>"  placeholder="No HP" required></input>
                 </div>
 
                 <div class="w-3/4 mb-2">
